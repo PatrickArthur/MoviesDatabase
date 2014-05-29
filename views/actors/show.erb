@@ -1,0 +1,38 @@
+<h3><%= @actor ['name'] %></h3>
+
+
+<tbody>
+  <tr>
+<td><a href="<%= "/actors" %>">Back to Actors Listing</a></td><br>
+<td><a href="<%= "/movies" %>">Back to Movies Listing</a></td>
+</tr>
+</tbody>
+
+<hr>
+
+
+  <table>
+  <thead>
+    <tr>
+      <th>Movie</th>
+      <th>Character</th>
+      <hr>
+    </tr>
+  </thead>
+
+  <tbody>
+
+
+
+<tbody>
+  <tr>
+ <% @query3.each do |x| %>
+ <% if x['id'] ==  params['id']%>
+    <td><a href="<%= "/movies/#{x['title']}" %>"><%= x["title"] %></a></td>
+    <td><%= x["character"] %></a></td>
+  </tr>
+ <% end %>
+ <% end %>
+</tbody>
+
+

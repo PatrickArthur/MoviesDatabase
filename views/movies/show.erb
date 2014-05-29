@@ -1,0 +1,55 @@
+
+<h3><%= @movie ['title'] %></h3>
+
+<tbody>
+  <tr>
+<td><a href="<%= "/actors" %>">Back to Actors Listing</a></td><br>
+<td><a href="<%= "/movies" %>">Back to Movies Listing</a></td>
+</tr>
+</tbody>
+
+  <hr>
+
+<table>
+  <thead>
+    <tr>
+      <th>Genra</th>
+      <th>Studio</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <tr>
+ <td><%= @movie["genra"] %></td>
+ <td><%= @movie["studioname"] %></td>
+  </tr>
+</tbody>
+
+</table>
+
+<hr>
+<br>
+
+<table>
+  <thead>
+    <tr>
+      <th>Actor</th>
+      <th>Character</th>
+    </tr>
+  </thead>
+
+ <tbody>
+  <tr>
+  <% @query4.each do |x| %>
+    <% if x['title'] ==  params['title']%>
+    <td><a href="<%= "/actors/#{x['id']}" %>"><%= x["actorname"] %></a></td>
+    <td><%= x["character"] %></td>
+  </tr>
+ <% end %>
+ <% end %>
+  </tr>
+</tbody>
+
+</table>
+
+

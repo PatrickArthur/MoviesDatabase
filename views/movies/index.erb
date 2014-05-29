@@ -1,0 +1,35 @@
+<h1>Movie Listing</h3>
+
+  <td><a href="<%= "/actors" %>">Actors Listing</a></td>
+
+  <hr>
+
+
+  <table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Year</th>
+      <th>Rating</th>
+      <th>Genra</th>
+      <th>Studio</th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+
+
+
+<tbody>
+  <tr>
+ <% @query5.each do |x| %>
+    <td><a href="<%= "/movies/#{x['title']}" %>"><%= x["title"] %></a></td>
+    <td><%= x["year"] %></td>
+    <td><%= x["rating"] %></td>
+    <td><%= x["genra"] %></td>
+    <td><%= x["studioname"] %></td>
+  </tr>
+ <% end %>
+</tbody>
+

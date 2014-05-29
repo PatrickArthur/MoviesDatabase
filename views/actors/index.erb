@@ -1,0 +1,30 @@
+<h3>List of Actors</h3>
+
+<td><a href="<%= "/movies" %>">Movies Listing</a></td>
+
+
+
+
+
+
+
+  <table>
+  <thead>
+    <tr>
+      <th>Actor</th>
+       <hr>
+    </tr>
+  </thead>
+
+  <tbody>
+
+
+
+<tbody>
+  <tr>
+ <% @query2.each do |actor| %>
+    <td><a href="<%= "/actors/#{actor['id']}" %>"><%= actor["name"] %></a></td>
+  </tr>
+ <% end %>
+</tbody>
+
